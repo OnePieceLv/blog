@@ -8,13 +8,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: "Lvwei.blog",
   tagline: '',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://blog.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'morpheus lv', // Usually your GitHub org/user name.
+  projectName: 'blog', // Usually your repo name.
+  deploymentBranch: 'main',
   plugins: [
     "./postcss-tailwind-loader.js",
     //多文档配置 https://stackoverflow.com/a/60791656
