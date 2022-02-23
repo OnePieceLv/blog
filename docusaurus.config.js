@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: "Lvwei.blog",
   tagline: '',
-  url: 'https://blog.github.io',
-  baseUrl: '/',
+  url: 'https://onepiecelv.github.io/blog/',
+  baseUrl: '/blog/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
