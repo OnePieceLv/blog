@@ -9,19 +9,25 @@ import HomepageFeatures from '../components/HomepageFeatures';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
+    <div className='tailwind'>
+      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+        <div className="container">
+          <h1 className="hero__title">{siteConfig.title}</h1>
+          <p className="hero__subtitle py-4">{siteConfig.tagline}</p>
+          {/* https://stackoverflow.com/a/48222599 */}
+          <div className="flex justify-center">
+            <img className="items-center" src="https://i.giphy.com/media/QTfX9Ejfra3ZmNxh6B/giphy.webp" onError={({ currentTarget }) => {currentTarget.onerror=null;currentTarget.src='https://i.giphy.com/QTfX9Ejfra3ZmNxh6B.gif'}}/>
+          </div>
+          <div className={clsx('py-4', styles.buttons)}>
+            <Link
+              className="button button--secondary button--lg"
+              to="/docs/intro">
+                开始阅读
+            </Link>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
   );
 }
 
@@ -29,7 +35,7 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`首页`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
