@@ -12,8 +12,8 @@ function HomepageHeader() {
     <div className='tailwind'>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle py-4">{siteConfig.tagline}</p>
+          <h1 className="hero__title text-6xl font-sans font-bold">{"日拱 · 一卒"}</h1>
+          <p className="hero__subtitle text-xl font-sans font-normal py-4">{""}</p>
           {/* https://stackoverflow.com/a/48222599 */}
           <div className="flex justify-center">
             <img className="items-center" src="https://i.giphy.com/media/QTfX9Ejfra3ZmNxh6B/giphy.webp" onError={({ currentTarget }) => {currentTarget.onerror=null;currentTarget.src='https://i.giphy.com/QTfX9Ejfra3ZmNxh6B.gif'}}/>

@@ -120,7 +120,7 @@ const config = {
         //     ],
         //   },
         // ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `<div>Copyright © ${new Date().getFullYear()} Lvwei's blog | <a href="https://beian.miit.gov.cn/#/Integrated/index">...</a></div>`,
       },
       prism: {
         theme: lightCodeTheme,
