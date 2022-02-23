@@ -8,12 +8,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: "Lvwei.blog",
   tagline: '',
-  url: 'https://onepiecelv.github.io/blog/',
+  url: 'https://onepiecelv.github.io/blog',
   baseUrl: '/blog/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'morpheus lv', // Usually your GitHub org/user name.
+  organizationName: 'OnePieceLv', // Usually your GitHub org/user name.
   projectName: 'blog', // Usually your repo name.
   deploymentBranch: 'main',
   plugins: [
