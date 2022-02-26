@@ -15,7 +15,6 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'OnePieceLv', // Usually your GitHub org/user name.
   projectName: 'blog', // Usually your repo name.
-  deploymentBranch: 'main',
   plugins: [
     "./postcss-tailwind-loader.js",
     //多文档配置 https://stackoverflow.com/a/60791656
