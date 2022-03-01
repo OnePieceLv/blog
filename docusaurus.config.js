@@ -18,15 +18,6 @@ const config = {
   plugins: [
     "./postcss-tailwind-loader.js",
     //多文档配置 https://stackoverflow.com/a/60791656
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'frontend',
-        path: 'frontend',
-        routeBasePath: 'frontend',
-        sidebarPath: require.resolve('./sidebars.js'),
-      },
-    ]
   ],
   presets: [
     [
@@ -62,12 +53,6 @@ const config = {
             docId: 'intro',
             position: 'left',
             label: 'iOS系列',
-          },
-          {
-            to: '/frontend/intro',    // ./docs-api/Intro.md
-            label: '前端系列',
-            position: 'left',
-            activeBaseRegex: `/frontend/`,
           },
           {to: '/blog', label: 'Blog', position: 'right'},
           {
@@ -126,6 +111,10 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+      }
     }),
 };
 

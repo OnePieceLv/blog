@@ -35,9 +35,8 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`首页`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
+      title={`${siteConfig.title}`}
+      description="iOS Developer">
       <main>
         <HomepageFeatures />
       </main>

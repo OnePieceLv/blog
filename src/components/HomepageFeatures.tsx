@@ -2,74 +2,65 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
+import { useSpring, animated, useTrail } from "react-spring";
+import Link from '@docusaurus/Link';
 
-type FeatureItem = {
-  title: string;
-  image: string;
-  description: JSX.Element;
-};
-
-const FeatureList: FeatureItem[] = [
-  {
-    title: 'Easy to Use',
-    image: '/img/undraw_docusaurus_mountain.svg',
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Focus on What Matters',
-    image: '/img/undraw_docusaurus_tree.svg',
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    image: '/img/undraw_docusaurus_react.svg',
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
-];
-
-function Feature({title, image, description}: FeatureItem) {
-  return (
-    <div className={clsx('col col--4 bg-kratos-400')}>
-      <div className="text--center">
-        <img
-          className={styles.featureSvg}
-          alt={title}
-          src={useBaseUrl(image)}
-        />
-      </div>
-      <div className="text--center padding-horiz--md bg-kratos-400">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
 
 export default function HomepageFeatures(): JSX.Element {
+  
+  const props = useSpring({
+    opacity: 1,
+    transform: "translateY(0)",
+    from: { opacity: 0, transform: "translateY(3em)" },
+    delay: 0,
+  });
+
+  const props2 = useSpring({
+    opacity: 1,
+    transform: "translateY(0)",
+    from: { opacity: 0, transform: "translateY(3em)" },
+    delay: 300,
+  });
+
+  const props3 = useSpring({
+    opacity: 1,
+    transform: "translateY(0)",
+    from: { opacity: 0, transform: "translateY(3em)" },
+    delay: 600,
+  });
+
+  const animatedTexts = useTrail(5, {
+    from: { opacity: 0, transform: "translateY(3em)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+    config: {
+      mass: 3,
+      friction: 45,
+      tension: 460,
+    },
+  });
+
+  /// <reference types="react-scripts" />
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+    <div className='tailwind'>
+      <div className="mx-2 md:flex justify-between items-center my-6 md:my-0 h-fit md:h-[calc(100vh-220px)]">
+        <animated.div style={props3} className="md:w-full flex-1 flex-col relative items-center justify-center text-5xl font-semibold md:py-6">
+          <div className='mb-10 text-center'>
+            Hello, 我是
+            <span className="font-bold text-blue-600">Lv Wei</span>
+          </div>
+          <div className="font-thin text-center text-3xl">计算机编程爱好者</div>
+          <div className={clsx('py-8', styles.buttons)}>
+            <Link
+              className="button button--secondary button--lg"
+              to="/docs/intro">
+                开始
+            </Link>
+          </div>
+        </animated.div>
+        <animated.div style={props3} className={"flex justify-between h-48 md:w-[50%] md:h-[50%] items-center"}>
+          <img src={useBaseUrl("img/home/gummy-programming.svg")}/>
+        </animated.div>
       </div>
-    </section>
+    </div>
   );
 }
