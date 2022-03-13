@@ -58,7 +58,7 @@ export default function HomepageFeatures(): JSX.Element {
           </div>
         </animated.div>
         <animated.div style={props3} className={"flex justify-between h-full md:w-[50%] md:h-[50%] items-center"}>
-          <img src={useBaseUrl("img/home/gummy-programming.webp")}/>
+          <img src={useBaseUrl("img/home/gummy-programming.png")}/>
         </animated.div>
       </div>
     </div>
