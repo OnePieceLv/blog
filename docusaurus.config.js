@@ -47,14 +47,19 @@ const config = {
     ({
       navbar: {
         title: "Lv Wei's Blog",
+        logo: {
+          src: "https://cdn.ifun.pub/%E9%93%B6%E6%97%B6.jpg?roundPic/radius/400",
+          width: 32,
+          height: 32
+        },
         items: [
           {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'iOS系列',
+            label: '进阶',
           },
-          {to: '/blog', label: 'Blog', position: 'right'},
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',

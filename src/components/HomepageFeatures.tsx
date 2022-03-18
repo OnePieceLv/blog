@@ -48,7 +48,7 @@ export default function HomepageFeatures(): JSX.Element {
             Hello, 我是
             <span className="font-bold text-blue-600">Lv Wei</span>
           </div>
-          <div className="font-thin text-center text-3xl">计算机编程爱好者</div>
+          <div className="font-mono text-center text-xl text-slate-500">这里是我总结和记录，整理编程知识的地方，也希望对你有用</div>
           <div className={clsx('py-8', styles.buttons)}>
             <Link
               className="button button--secondary button--lg"
