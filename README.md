@@ -2,7 +2,7 @@
 
 本博客是使用 [Docusaurus](https://docusaurus.io/) 技术构建，用于记录整理自己的技术学习过程中的一些收获
 
-## 文章目录
+## 文章合集
 
 [目录](./docs/intro.md)
 
