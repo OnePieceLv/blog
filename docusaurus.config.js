@@ -59,11 +59,29 @@ const config = {
             position: 'left',
             label: '进阶',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
+            type: 'dropdown',
+            label: 'Github',
+            position: 'left',
+            items: [
+              {
+                label: 'NetService',
+                href:'https://github.com/OnePieceLv/NetService',
+              },
+              {
+                label: 'DispatchCenter',
+                href:'https://github.com/OnePieceLv/DispatchCenter',
+              },
+              {
+                label: 'TextKitAndAnimationEffect',
+                href: 'https://github.com/OnePieceLv/TextKitAndAnimationEffect'
+              },
+              {
+                label: 'UIStackLayoutView',
+                href: 'https://github.com/OnePieceLv/UIStackLayoutView'
+              }
+            ]
           },
         ],
       },
