@@ -1,8 +1,17 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
+// const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+// const palenightTheme = require('prism-react-renderer/themes/palenight');
+// const vsDarkTheme = require('prism-react-renderer/themes/vsDark');
+// const duotoneDarkTheme = require('prism-react-renderer/themes/duotoneDark');
+// const oceanicNextTheme = require('prism-react-renderer/themes/oceanicNext');
+// const synthwave84Theme = require('prism-react-renderer/themes/synthwave84');
+// const okaidiaTheme = require('prism-react-renderer/themes/okaidia');
+// const nightOwlTheme = require('prism-react-renderer/themes/nightOwl');
+// const shadesOfPurpleTheme = require('prism-react-renderer/themes/shadesOfPurple');
+// const ultraminTheme = require('prism-react-renderer/themes/ultramin');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -131,8 +140,8 @@ const config = {
         copyright: `<div>Copyright © ${new Date().getFullYear()} Lvwei's blog | <a href="https://beian.miit.gov.cn/#/Integrated/index">...</a></div>`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: darkCodeTheme,
+        // darkTheme: darkCodeTheme,
       },
       colorMode: {
         defaultMode: 'light',
