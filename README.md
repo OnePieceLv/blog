@@ -4,7 +4,7 @@
 
 ## 文章目录
 
-[点我](./docs/intro.md)
+[目录](./docs/intro.md)
 
 ## 思维导图
 
