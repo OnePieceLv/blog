@@ -37,6 +37,10 @@ export default function Home(): JSX.Element {
     <Layout
       title={`${siteConfig.title}`}
       description="iOS Developer">
+      <head>
+        <meta name="robots" content="noindex" />
+        <meta name="keywords" content="ios swift 技术栈" />
+      </head>
       <main>
         <HomepageFeatures />
       </main>
