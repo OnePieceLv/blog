@@ -26,9 +26,9 @@ sidebar_position: 1
 <img src="https://cdn.ifun.pub/20220320/Fq8kZcyzCaExEZ5ceaZ2uzHZg1oP.svg" alt="内存区域" width="300px" />
 
 - `.stack` 存储程序执行期间的本地变量和函数的参数, 从高地址向低地址生长。
-- `.heap` 态内存分配区域。
+- `.heap` 动态内存分配区域。
 - `.bss` 存储未被初始化的全局变量和静态变量。
-- `.data` 存储在源代码中有预定义值的全局变量和静态变量。
+- `.data` 存已经初始化的全局变量和静态变量，是静态内存分配。
 - `.text` 程序代码。
 
 ## ObjC 与 Swift 是一样的么？两者的区别是什么？
