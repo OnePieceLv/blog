@@ -15,7 +15,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "morpheus lv's Blog",
+  title: "morpheus 的日志",
   tagline: '',
   url: 'https://lvwei.blog',
   baseUrl: '/',
@@ -55,7 +55,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "morpheus lv's Blog",
+        title: "morpheus 的日志",
         logo: {
           src: "https://cdn.ifun.pub/%E9%93%B6%E6%97%B6.jpg?roundPic/radius/400",
           width: 32,
