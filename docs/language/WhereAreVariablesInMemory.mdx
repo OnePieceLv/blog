@@ -4,8 +4,6 @@ sidebar_position: 1
 
 # iOS里变量在内存中的存储方式
 
-弄清这个问题前, 我们需要先弄清楚下面几个问题：
-
 <!-- TOC -->
 - [内存是如何布局的](#%E5%86%85%E5%AD%98%E6%98%AF%E5%A6%82%E4%BD%95%E5%B8%83%E5%B1%80%E7%9A%84)
     - [基本概念](#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5)
@@ -15,6 +13,11 @@ sidebar_position: 1
 - [总结](#%E6%80%BB%E7%BB%93)
 - [参考链接](#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5)    
 <!-- /TOC -->
+
+对于iOS里变量在内存中的存储方式这个问题i, 可以从下面两个问题着手：
+
+- **内存是如何布局的**
+- **ObjC 与 Swift 是一样的么？两者的区别是什么？**
 
 ## 内存是如何布局的
 ### 基本概念
@@ -40,10 +43,13 @@ sidebar_position: 1
 ObjC 在创建对象时, 使用两段申请, alloc 和 init。查看 NSObject.mm 源文件, 可以发现 alloc 方法是通过 calloc（或者 malloc_zone_calloc）给对象在 heap 上申请了一段内存。
 ```c
 static ALWAYS_INLINE id
-_class_createInstanceFromZone(Class cls,  size_t extraBytes,  void *zone, 
-                              int construct_flags = OBJECT_CONSTRUCT_NONE, 
-                              bool cxxConstruct = true, 
-                              size_t *outAllocatedSize = nil)
+_class_createInstanceFromZone(
+    Class cls, 
+    size_t extraBytes,  
+    void *zone, 
+    int construct_flags = OBJECT_CONSTRUCT_NONE, 
+    bool cxxConstruct = true, 
+    size_t *outAllocatedSize = nil)
 {
     .........
 
@@ -70,8 +76,8 @@ fakeNSObject.isa = [NSObject class];
 NSObject *obj = (NSObject *)&fakeNSObject;
 NSLog(@"%@",  [obj description]);
 ```
-在 ObjC 里的 stack 类型是: `blocks`,  Blocks 在不破坏二进制兼容性的情况下, 由语言本身决定。
-其大小可以编译时计算出来, 事实上, 整个对象是由编译器生成的代码构建的。因此, 无法通过写一个 initializer 来做点 tricky 的事情。
+在 ObjC 里的 `blocks` 是存储在 stack 上的。Blocks 其大小可以编译时计算出来, 事实上, 整个对象是由编译器生成的代码构建的。
+因此, 无法通过写一个 initializer 来做点 tricky 的事情。
 因为 blocks 是在 stack 上, 所以任务需要处理 blocks 的代码, 都需要 copy 一份 block 到 heap 上, 而不是 retain +1
 这也是为什么当 Block 作为属性时, 常常要用 copy 修饰。举例来说：
 ```objc
@@ -128,7 +134,8 @@ class Location {
 
 
 > 欢迎关注微信公众号：扯闲蛋  
-> ![扯闲蛋](https://cdn.ifun.pub/20220321/Fl4AvCmV_kF3mcQ-XQBcJ2CKeNYy.jpeg)
+> ![扯闲蛋](https://cdn.ifun.pub/20220321/Fl4AvCmV_kF3mcQ-XQBcJ2CKeNYy.jpeg)  
+
 
 ## 参考链接
 - https://time.geekbang.org/column/article/408409
