@@ -45,12 +45,12 @@ export default function HomepageFeatures(): JSX.Element {
       <div className="mx-2 md:flex justify-between items-center my-6 md:my-0 h-fit md:h-[calc(100vh-220px)]">
         <animated.div style={props3} className="md:w-full flex-1 flex-col relative items-center justify-center text-5xl font-semibold md:py-6">
           <div className='mb-10 text-center'>
-            Hello, 我是
-            <span className="font-bold text-blue-600">Morpheus Lv</span>
+            {/* Morepheus Lv 的 */}
+            <span className="font-bold text-blue-600">学习, 记录, 整理</span>
           </div>
           <div className='text-center'>
-            <div className="font-mono text-xl text-slate-500">这里是我学习, 记录, 整理知识的地方, 也希望对你有用</div>
-            <span className="font-mono text-base text-slate-400">做一件事最好是十年前, 其次是现在</span>
+            <div className="font-mono text-xl text-slate-500">做一件事最好是十年前, 其次是现在</div>
+            {/* <span className="font-mono text-base text-slate-400">做一件事最好是十年前, 其次是现在</span> */}
           </div>
           <div className={clsx('py-8', styles.buttons)}>
             <Link
