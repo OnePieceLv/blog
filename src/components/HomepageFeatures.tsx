@@ -46,11 +46,11 @@ export default function HomepageFeatures(): JSX.Element {
         <animated.div style={props3} className="md:w-full flex-1 flex-col relative items-center justify-center text-5xl font-semibold md:py-6">
           <div className='mb-10 text-center'>
             Hello, 我是
-            <span className="font-bold text-blue-600">Lv Wei</span>
+            <span className="font-bold text-blue-600">Morpheus Lv</span>
           </div>
           <div className='text-center'>
-            <div className="font-mono text-xl text-slate-500">这里是我学习，记录，整理知识的地方，也希望对你有用</div>
-            <span className="font-mono text-base text-slate-400">做一件事最好是十年前，其次是现在</span>
+            <div className="font-mono text-xl text-slate-500">这里是我学习, 记录, 整理知识的地方, 也希望对你有用</div>
+            <span className="font-mono text-base text-slate-400">做一件事最好是十年前, 其次是现在</span>
           </div>
           <div className={clsx('py-8', styles.buttons)}>
             <Link
