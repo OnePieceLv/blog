@@ -78,7 +78,7 @@ NSLog(@"%@",  [obj description]);
 ```
 在 ObjC 里的 `blocks` 是存储在 stack 上的。Blocks 其大小可以编译时计算出来, 事实上, 整个对象是由编译器生成的代码构建的。
 因此, 无法通过写一个 initializer 来做点 tricky 的事情。
-因为 blocks 是在 stack 上, 所以任务需要处理 blocks 的代码, 都需要 copy 一份 block 到 heap 上, 而不是 retain +1
+因为 blocks 是在 stack 上, 所以任务需要使用 blocks 的代码, 都需要 copy 一份到 heap 上, 而不是 retain +1
 这也是为什么当 Block 作为属性时, 常常要用 copy 修饰。举例来说：
 ```objc
     [dictionary setObject: ^{ printf("hey hey\n"); } forKey: key];
