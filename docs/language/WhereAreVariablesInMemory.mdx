@@ -78,7 +78,7 @@ NSLog(@"%@",  [obj description]);
 ```
 在 ObjC 里的 `blocks` 是存储在 stack 上的。Blocks 其大小可以编译时计算出来, 事实上, 整个对象是由编译器生成的代码构建的。
 因此, 无法通过写一个 initializer 来做点 tricky 的事情。
-因为 blocks 是在 stack 上, 所以任务需要使用 blocks 的代码, 都需要 copy 一份到 heap 上, 而不是 retain +1
+因为 blocks 是在 stack 上, 所以需要使用 blocks 代码时, 都需要 copy 一份到 heap 上, 而不是 retain +1
 这也是为什么当 Block 作为属性时, 常常要用 copy 修饰。举例来说：
 ```objc
     [dictionary setObject: ^{ printf("hey hey\n"); } forKey: key];
@@ -88,15 +88,15 @@ dictionary 会 retain 这个 block, 而不是 copy, 这就会导致悬挂指针�
 ### Swift 对象内存分配
 
 在 Swift 里面变量的内存分配有了很大的变化, Swift 有两种类型, Value Type 和 Reference Type。一般认为, Value Type 在 stack 上, Reference Type 在 heap 上。
-但实际情况比这复杂的多,  准确的来说, Swift 并不保证 objects 和 values 存储在哪里, 除非
-1. Reference Type 在内存中有一个稳定的位置, 因此对同一对象的所有引用都指向完全相同的位置
-2. Value Type 不能保证在内存中有一个稳定的位置, 并且可以在编译器认为合适的时候任意复制
+但这么表述只是部分正确，实际情况比这复杂的多,  准确的来说, Swift 并不保证 objects 和 values 存储在哪里。
+如果 Reference Type 在内存中有一个稳定的位置, 则对同一对象的所有引用都会指向完全相同的位置。
+而 Value Type 不能保证在内存中有一个稳定的位置, 并且可以在编译器认为合适的时候任意复制
 
-对于 Value Type 的存储就比较复杂了, 需要视情况而定。
+在实践中，我们可以认为 reference type 是存储在 heap 上的。而 Value Type 的存储就比较复杂了, 需要视情况而定。
 1. 除非需要对一个值进行基于位置的引用（例如, 用&获取对结构的引用）, 否则结构可能完全位于寄存器中（比如类似 Ints 和 Doubles 这样的小的、可能是短暂的值类型, 它们被保证适合放在寄存器中）。
 2. 大的值类型实际上是分配在堆上的, 这与价值类型的价值性并不冲突：它仍然可以按照编译器的意愿任意复制, 而且编译器在避免不必要的分配方面做得非常好
 
-我们可以想象值类型是以 inline 方式存储的, 假设我们有下面的一个结构体: 
+其实, 我们可以想象值类型是以 inline 方式存储的, 假设我们有下面的一个结构体: 
 
 ```swift
 struct Point {
@@ -125,7 +125,7 @@ class Location {
 
 当创建一个 Location 对象时, 编译器会确保有足够的空间来存储一个 String 和两个 Doubles, 并将它们一个接一个地排出来。这些空间在哪里并不重要, 但在这种情况下, 它们都在堆上（因为Location是一个引用类型, 它恰好包含值）。
 
-但是当你把 Point 改成 class 时, 情况又会有所改变。
+但是当你把 Point 改成 class 时, 情况又会有所改变。这时候就不是 inline 这种方式了。
 
 
 ## 总结
