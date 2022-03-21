@@ -107,7 +107,7 @@ struct Point {
 ```
 
 当你需要存储一个 Point 时, 编译器会确保你有足够的空间来存储 x 和 y, 通常一个接一个的存储,  如果一个 Point 被存储在 stack 中, 那么 x 和 y 被存储在 stack 中；
-如果点被存储在 heap 中, 那么 x 和 y 作为 Point 的一部分存在于 Heap 中。
+如果 Point 被存储在 heap 中, 那么 x 和 y 作为 Point 的一部分存在于 Heap 中。
 无论 Swift 把一个 Point 存储在什么位置, 它总是确保有足够的空间, 当给 x 和 y 赋值时, 它们会被写到哪个空间。在哪里并不十分重要。
 
 当 Point 时另外一个对象的属性时, 情况也是一样, 可以当成 inline 来考虑
