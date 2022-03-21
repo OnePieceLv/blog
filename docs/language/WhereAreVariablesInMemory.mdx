@@ -87,8 +87,8 @@ dictionary 会 retain 这个 block, 而不是 copy, 这就会导致悬挂指针�
 2. Value Type 不能保证在内存中有一个稳定的位置, 并且可以在编译器认为合适的时候任意复制
 
 对于 Value Type 的存储就比较复杂了, 需要视情况而定。
-1. 除非需要对一个值进行基于位置的引用（例如, 用&获取对结构的引用）, 否则结构可能完全位于寄存器中（比如类似Ints和Doubles这样的小的、可能是短暂的值类型, 它们被保证适合放在寄存器中）。
-2. 大的值类型实际上是分配在堆上的：比如 String 总是有个值引用。这与价值类型的价值性并不冲突：它仍然可以按照编译器的意愿任意复制, 而且编译器在避免不必要的分配方面做得非常好
+1. 除非需要对一个值进行基于位置的引用（例如, 用&获取对结构的引用）, 否则结构可能完全位于寄存器中（比如类似 Ints 和 Doubles 这样的小的、可能是短暂的值类型, 它们被保证适合放在寄存器中）。
+2. 大的值类型实际上是分配在堆上的, 这与价值类型的价值性并不冲突：它仍然可以按照编译器的意愿任意复制, 而且编译器在避免不必要的分配方面做得非常好
 
 我们可以想象值类型是以 inline 方式存储的, 假设我们有下面的一个结构体: 
 
@@ -134,7 +134,6 @@ class Location {
 - https://time.geekbang.org/column/article/408409
 - https://zh.wikipedia.org/wiki/静态变量
 - https://draveness.me/system-design-memory-management
-- https://www.jianshu.com/p/f8f9b8f8f9c1
 - https://www.mikeash.com/pyblog/friday-qa-2010-01-15-stack-and-heap-objects-in-objective-c.html
 - https://developer.apple.com/forums/thread/50357
 - https://stackoverflow.com/a/71071748
