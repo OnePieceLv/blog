@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lvwei.blog/blog</id>
-    <title>Morpheus Lv's Blog Blog</title>
+    <title>扯闲蛋 Blog Blog</title>
     <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lvwei.blog/blog"/>
-    <subtitle>Morpheus Lv's Blog Blog</subtitle>
+    <subtitle>扯闲蛋 Blog Blog</subtitle>
     <icon>https://lvwei.blog/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
