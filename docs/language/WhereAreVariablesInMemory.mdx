@@ -85,7 +85,7 @@ NSLog(@"%@",  [obj description]);
 ```
 dictionary 会 retain 这个 block, 而不是 copy, 这就会导致悬挂指针问题
 
-**补充**：严格来说，block 有三种类型, 而其中 `_NSConcreteGlobalBlock` 是全局的静态 `block`。
+**补充**：严格来说, 在ARC开启时, block 有三种类型, 而其中 `_NSConcreteGlobalBlock` 是全局的静态 `block`。这里就不展开讨论了。
 
 ### Swift 对象内存分配
 
