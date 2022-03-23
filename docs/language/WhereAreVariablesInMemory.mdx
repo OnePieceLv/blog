@@ -65,7 +65,7 @@ _class_createInstanceFromZone(
 
 ```
 
-通常在 ObjC 里对象创建在 heap 上, 如果你想在 stack 上创建对象, 会有些绕, 类似如下方法
+通常在 ObjC 里对象创建在 heap 上 (补充：这里需要注意的是 Tagged Pointer，因为它存储的不是指针而是真正的值), 如果你想在 stack 上创建对象, 会有些绕, 类似如下方法
 
 ```c
 struct {
@@ -84,6 +84,8 @@ NSLog(@"%@",  [obj description]);
     [dictionary setObject: ^{ printf("hey hey\n"); } forKey: key];
 ```
 dictionary 会 retain 这个 block, 而不是 copy, 这就会导致悬挂指针问题
+
+**补充**：严格来说，block 有三种类型, 而其中 `_NSConcreteGlobalBlock` 是全局的静态 `block`。
 
 ### Swift 对象内存分配
 
