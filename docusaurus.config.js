@@ -68,7 +68,7 @@ const config = {
             position: 'left',
             label: '进阶',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
             type: 'dropdown',
             label: 'Github',
