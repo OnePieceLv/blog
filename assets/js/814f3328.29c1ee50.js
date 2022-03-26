@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"\u5982\u4f55\u5b9e\u73b0\u81ea\u5df1\u6ca1\u5b9e\u73b0\u8fc7\u7684\u9700\u6c42\u4e4b\u6587\u672c\u52a8\u753b","permalink":"/blog/2016/04/08/old-blog-post"}]}')}}]);

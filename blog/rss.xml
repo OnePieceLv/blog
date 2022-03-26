@@ -8,7 +8,7 @@
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
-            <title><![CDATA[如何实现自己没实现过的需求之文本动画]]></title>
+            <title><![CDATA[如何实现文本动画]]></title>
             <link>https://lvwei.blog/blog/2016/04/08/old-blog-post</link>
             <guid>/2016/04/08/old-blog-post</guid>
             <pubDate>Thu, 17 Mar 2016 12:01:00 GMT</pubDate>
